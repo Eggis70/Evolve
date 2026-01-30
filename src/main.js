@@ -93,7 +93,7 @@ $(document).keydown(function(e){
                         case quickMap.showCivic:
                             // not reaching Military
                             tabName = 'govTabs';
-                            tabList = ["Government", s.showIndustry, s.showPowerGrid, s.showMil, s.showMechLab, s.showShipYard, s.showPsychic, s.showWish];
+                            tabList = ["Government", s.showIndustry, s.showPowerGrid, s.showMil, s.showMechLab, s.showShipYard, s.showPsychic, s.showWish, s.showCities];
                             break;
                         case quickMap.showResearch:
                             tabName = 'resTabs';
