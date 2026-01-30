@@ -1653,6 +1653,9 @@ if (!global.hasOwnProperty('govern')){
 if (!global.settings.hasOwnProperty('showMil')){
     global.settings['showMil'] = true;
 }
+if (!global.settings.hasOwnProperty('showCities')){
+    global.settings['showCities'] = true;
+}
 if (!global.settings.hasOwnProperty('showPowerGrid')){
     global.settings['showPowerGrid'] = global.hasOwnProperty('tech') && global.tech.hasOwnProperty('high_tech') && global.tech.high_tech >= 2 ? true : false;
 }
@@ -2289,7 +2292,8 @@ function setRegionStates(reset){
             'showCiv','showCity','showIndustry','showPowerGrid','showMechLab','showShipYard',
             'showResearch','showCivic','showMil','showResources','showMarket','showStorage',
             'showGenetics','showSpace','showDeep','showGalactic','showPortal','showEden','showOuter',
-            'showTau','showEjector','showCargo','showAlchemy','showGovernor','arpa','showPsychic','showWish'
+            'showTau','showEjector','showCargo','showAlchemy','showGovernor','arpa','showPsychic','showWish',
+            'showCities'
         ],
         space: [
             'moon','red','hell','sun','gas','gas_moon','belt','dwarf','alpha','proxima',

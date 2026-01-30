@@ -7,6 +7,7 @@ import { defineJobs, } from './jobs.js';
 import { clearSpyopDrag } from './governor.js';
 import { defineIndustry, setPowerGrid, gridDefs, clearGrids } from './industry.js';
 import { defineGovernment, defineGarrison, buildGarrison, commisionGarrison, foreignGov } from './civics.js';
+import { drawCities } from './cities.js';
 import { races, shapeShift, renderPsychicPowers, renderSupernatural } from './races.js';
 import { drawEvolution, drawCity, drawTech, resQueue, clearResDrag } from './actions.js';
 import { renderSpace, ascendLab, terraformLab } from './space.js';
@@ -521,6 +522,12 @@ export function loadTab(tab){
                             <span aria-hidden="true">{{ 'tab_supernatural' | label }}</span>
                         </template>
                     </b-tab-item>
+                    <b-tab-item id="cities" class="citiesTab" :visible="s.showCities">
+                        <template slot="header">
+                            <h2 class="is-sr-only">{{ 'tab_cities' | label }}</h2>
+                            <span aria-hidden="true">{{ 'tab_cities' | label }}</span>
+                        </template>
+                    </b-tab-item>
                 </b-tabs>`);
                 vBind({
                     el: `#mTabCivic`,
@@ -542,6 +549,7 @@ export function loadTab(tab){
                                 clearElement($(`#dwarfShipYard`));
                                 clearElement($(`#psychicPowers`));
                                 clearElement($(`#supernatural`));
+                                clearElement($(`#cities`));
                                 switch (tab){
                                     case 0:
                                         {
@@ -598,6 +606,9 @@ export function loadTab(tab){
                                             renderSupernatural();
                                         }
                                         break;
+                                    case 8:
+                                        drawCities();
+                                        break;
                                 }
                             }
                             return tab;
@@ -641,6 +652,7 @@ export function loadTab(tab){
                     shapeShift(false,true);
                 }
                 defineIndustry();
+                drawCities();
             }
             break;
         case 3:
